@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Delete an account
-    function deleteAccount(accountId) {
+    window.deleteAccount = function(accountId) {
         if (confirm('Are you sure you want to delete this account?')) {
             fetch(`/api/accounts/${accountId}`, {
                 method: 'DELETE'
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error:', error));
         }
-    }
+    };
 
     // Load all accounts and add Delete button
     function loadAccounts() {

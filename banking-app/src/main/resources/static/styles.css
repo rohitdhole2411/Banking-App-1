@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -55,4 +56,27 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
+}
+
+/* Add specific styling for delete buttons inside the account list */
+#accountDetails li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#accountDetails li button {
+    background-color: #dc3545;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#accountDetails li button:hover {
+    background-color: #c82333;
 }
