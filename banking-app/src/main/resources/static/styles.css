@@ -1,82 +1,82 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #f4f4f9; /* Background remains light */
 }
 
 header {
-    background-color: #333;
+    background-color: #800000; /* Maroon */
     color: white;
-    text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-h1, h2 {
-    margin: 20px 0;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin: 10px 0 5px;
-}
-
-input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Add specific styling for delete buttons inside the account list */
-#accountDetails li {
+nav ul {
+    list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-#accountDetails li button {
-    background-color: #dc3545;
-    padding: 8px 12px;
-    border-radius: 4px;
+nav ul li {
+    display: flex;
+    align-items: center
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 100px;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for four items */
+    gap: 30px;
+    padding: 40px;
+    justify-items: center;
+}
+
+.menu-item {
+    width: 300px;
+    height: 150px;
+    background-color: #800000; /* Maroon */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
     cursor: pointer;
 }
 
-#accountDetails li button:hover {
-    background-color: #c82333;
+.menu-item h2 {
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #800000; /* Maroon */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
 }

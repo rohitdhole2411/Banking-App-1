@@ -1,45 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banking App</title>
+  <title>Banking Application Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-  <h1>Banking Application</h1>
+  <nav>
+    <ul>
+      <li><img src="banklogo-modified.png" alt="logo" style="width:50px;"> <h1>APNA BANK</h1> </li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li><a href="index.html"><h3>Home</h3></a></li>
+      <li><a href="about.html"><h3>About Us</h3></a></li>
+      <li><a href="profile.html"><img src="profile-icon.png" alt="Profile" style="width:40px;"></a></li>
+    </ul>
+  </nav>
 </header>
 
-<section id="account-form">
-  <h2>Create Account</h2>
-  <form id="createAccountForm">
-    <label for="accountHolderName">Account Holder Name:</label>
-    <input type="text" id="accountHolderName" required>
-    <label for="initialBalance">Initial Balance:</label>
-    <input type="number" id="initialBalance" required>
-    <button type="submit">Create Account</button>
-  </form>
-</section>
+<main>
+  <section class="menu">
+    <a href="create-account.html">
+      <div class="menu-item">
+        <h2>Account Creation</h2>
+      </div>
+    </a>
+    <a href="account-list.html">
+      <div class="menu-item">
+        <h2>Account List</h2>
+      </div>
+    </a>
+    <a href="deposit.html">
+      <div class="menu-item">
+        <h2>Deposits</h2>
+      </div>
+    </a>
+    <a href="withdraw.html">
+      <div class="menu-item">
+        <h2>Withdrawals</h2>
+      </div>
+    </a>
+  </section>
+</main>
 
-<section id="accounts-list">
-  <h2>Accounts</h2>
-  <ul id="accountDetails"></ul>
-</section>
-
-<section id="transactions">
-  <h2>Manage Account</h2>
-  <form id="transactionForm">
-    <label for="accountId">Account ID:</label>
-    <input type="number" id="accountId" required>
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" required>
-    <button type="submit" id="depositButton">Deposit</button>
-    <button type="submit" id="withdrawButton">Withdraw</button>
-  </form>
-</section>
-
-<script src="script.js"></script>
+<footer>
+  <p><h3>Contact Us: +91 9233408234</h3></p>
+</footer>
 </body>
 </html>
