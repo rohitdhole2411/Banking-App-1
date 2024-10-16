@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+<header>
+  <h1 style="margin-right: auto;">Deposit to Account</h1> <!-- Align title to the left -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Link to Home -->
+      <li><a href="account-list.html">Account List</a></li> <!-- Link to Account List -->
+    </ul>
+  </nav>
+</header>
+
+
+<section id="transactions">
+  <form id="depositForm">
+    <label for="accountId">Account ID:</label>
+    <input type="number" id="accountId" required>
+    <label for="amount">Deposit Amount:</label>
+    <input type="number" id="amount" required>
+    <button type="submit">Deposit</button>
+  </form>
+</section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const depositForm = document.getElementById('depositForm');
+
+        depositForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const accountId = document.getElementById('accountId').value;
+            const amount = document.getElementById('amount').value;
+
+            fetch(`/api/accounts/${accountId}/deposit`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(`Deposit successful! New Balance: ${data.newBalance}`);
+                window.location.href = 'account-list.html'; // Redirect to account list
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+</body>
+</html>
